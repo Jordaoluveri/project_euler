@@ -6,13 +6,14 @@
 
 def getFactor(number)
     primes = []
-    for i in 2..number
-      while number%i == 0 do
-          primes.push(i)
-          number = number/i
+    counter = 2
+    while counter <= number do
+      while number%counter == 0 do
+          primes.push(counter)
+          number /= counter
       end
+      counter += 1
    end
-   @primes = primes
    return primes
 end
 
