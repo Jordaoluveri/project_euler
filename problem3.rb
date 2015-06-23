@@ -1,8 +1,8 @@
-Problem3
+# Problem3
 
-The prime factors of 13195 are 5, 7, 13 and 29.
+# The prime factors of 13195 are 5, 7, 13 and 29.
 
-What is the largest prime factor of the number 600851475143 ?
+# What is the largest prime factor of the number 600851475143 ?
 
 def getFactor(number)
     primes = []
@@ -16,4 +16,4 @@ def getFactor(number)
    return primes
 end
 
-getFactor(180180)
+getFactor(600851475143)
