@@ -1,42 +1,19 @@
-primes = [2];
-factors = [];
-var getPrimes = function(number){
-    for (var i = 0; i <= number; i++){
-         if (i%2 !== 0 && i !== 1){
-            counter = 0;
-            var prime = 1;
-            while (counter < primes.length){
-                if (i%primes[counter] === 0){
-                    prime = 0;
-                    break;
-                }
-                counter++;
-            }
-            if (prime){
-                primes.push(i);
-            }
+//Problem 3
+
+//The prime factors of 13195 are 5, 7, 13 and 29.
+
+//What is the largest prime factor of the number 600851475143 ?
+
+var getFactor = function(number){
+    var i = 0;
+    var primes = [];
+    for (i = 2; i <= number; i++){
+        while (number%i === 0){
+            primes.push(i);
+            number = number/i;
         }
     }
     return primes;
 };
 
-var getPrimeFactors = function (number){
-    ceilRoot = Math.ceil(Math.sqrt(number));
-    getPrimes(ceilRoot);
-    for (var i = 0; i < primes.length; i++){
-        if ((number/primes[i])%1 === 0){
-            factors.push(primes[i]);
-            number = number/primes[i];
-            i = -1;
-        }
-    }
-    return factors;
-};
-
-var start = new Date().getTime();
-getPrimeFactors(600851475143);
-var end = new Date().getTime();
-var time = end - start;
-console.log(time);
-console.log(factors);
-
+getFactor(600851475143977);
