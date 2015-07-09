@@ -39,4 +39,4 @@ def even_fib
     return sum
 end
 
-even_fib, 1000)
+even_fib
