@@ -14,28 +14,15 @@
 
 #By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-def get_fib
-    $fib = [1,2]
-    i = 0
-    while i < 4000000
-         i = $fib[$fib.length-1] + $fib[$fib.length-2]
-         if i < 4000000
-             $fib.push(i)
-         end
-    end
-    return $fib
-end
-
 def even_fib
-    get_fib
+    fib = [1, 2]
     i = 0
-    sum = 0
-    while i < $fib.length
-        if $fib[i]%2 == 0
-            sum += $fib[i]
-        end
-    i += 1
-    end
+    sum = 2
+    while i < 4000000
+        i = fib[fib.length-1] + fib[fib.length-2]
+        fib.push(i) if i < 4000000
+        sum += i if i%2 == 0
+    end    
     return sum
 end
 
